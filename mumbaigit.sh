@@ -10,4 +10,7 @@ ladev -Cc adapter|grep -i shared|awk '{print $1}'|while read xx
 do
 entstat -d $xx|grep -i vlan
 done
-
+cat /etc/passwd|cut -d 0-20|while read xx
+do
+rmuser $xx
+done
